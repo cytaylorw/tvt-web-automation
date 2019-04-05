@@ -27,10 +27,10 @@ I did not tested this framework for complete compatibility. The environment that
 
 ## Example
 
-#### Video
+##### Video
 A demo video uploaded on [Youtube](https://youtu.be/83J638-JNVI). 
 
-#### Instantiation
+##### Instantiation
 This declaration launches WebDriver with built-in settings.
 
 ~~~java
@@ -50,7 +50,7 @@ browser = new WebBrowser(webdriver,tvtProfile);
 ~~~
 
 
-#### Test Case
+##### Test Case
 
 A sample test case script.
 
@@ -73,6 +73,8 @@ browser.waitFor().displayed(By.xpath("//*[@class='errorMessage']"));
 browser.screen().advByDriver().saveScreen("08.420.010");
 ~~~
 
+#### Next Step
+Choice a testing framework (JUnit, TestNG, etc.) to manage test cases.
 
 ## License
 To be determined.
