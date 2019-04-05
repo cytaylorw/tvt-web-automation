@@ -18,11 +18,11 @@ This is the first program that I wrote and used for my work. I did not handle so
 ## Last Working Environment/Dependencies
 I did not tested this framework for complete compatibility. The environment that I last used is provided for anyone who will be intrested.
 
--Eclipse version: eclipse-java-mars-1-win32-x86_64
--Eclipse plug-in: TestNG 6.9.5.201508210528
--Java 1.8 (JDK 8u92)
--Selenium server 2.53.0
--Chrome Driver 2.20
+- Eclipse version: eclipse-java-mars-1-win32-x86_64
+- Eclipse plug-in: TestNG 6.9.5.201508210528
+- Java 1.8 (JDK 8u92)
+- Selenium server 2.53.0
+- Chrome Driver 2.20
 
 
 ## Example
