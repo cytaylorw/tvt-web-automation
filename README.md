@@ -74,7 +74,7 @@ browser.screen().advByDriver().saveScreen("08.420.010");
 ~~~
 
 #### Next Step
-Choice a testing framework (JUnit, TestNG, etc.) to manage test cases.
+Choice a testing framework (JUnit, TestNG, etc.) to manage test scripts.
 
 ## License
 To be determined.
