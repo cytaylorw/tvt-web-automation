@@ -74,7 +74,12 @@ browser.screen().advByDriver().saveScreen("08.420.010");
 ~~~
 
 #### Next Step
-Choice a testing framework (JUnit, TestNG, etc.) to manage test scripts.
+Choice a testing framework (JUnit, TestNG, etc.) to manage test scripts. My workspace for example:
+
+1. Core functions (This framework)
+2. Product specific functions
+3. General test suite setup 
+4. Actual test scripts
 
 ## License
 To be determined.
