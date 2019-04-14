@@ -73,8 +73,8 @@ public class ElementActionByRobot{
 		
 		element.delay(delay).waitFor().enabled();
 		browser.actionsByRobot().move(point.x+offset.getX()+width, point.y+offset.getY()+height);
-		robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseMove(0, 0);
         return element;
 	}
@@ -93,10 +93,10 @@ public class ElementActionByRobot{
 		element.delay(delay).waitFor().enabled();
 		browser.actionsByRobot().move(point.getX()+offset.getX()+width, point.getY()+offset.getY()+height);
 		robot.setAutoDelay(browser.robotSetup().getRobotDelay()/3);
-		robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseMove(0, 0);
         return element;
 	}
@@ -114,8 +114,8 @@ public class ElementActionByRobot{
 		
 		element.delay(delay).waitFor().enabled();
 		browser.actionsByRobot().move(point.getX()+offset.getX()+width, point.getY()+offset.getY()+height);
-		robot.mousePress(InputEvent.BUTTON3_MASK);
-        robot.mouseRelease(InputEvent.BUTTON3_MASK);
+		robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
         robot.mouseMove(0, 0);
         return element;
 	}
