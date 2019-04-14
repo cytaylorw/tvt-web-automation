@@ -1,4 +1,4 @@
-# TVT Web Automation Framework
+# Web Automation Framework
 This framework was developed for TVT screen capturing while I was working as vendor in IBM Taiwan. I organized all the functions around one object named WebBrowser so I could quickly pick up the work that I done since last TVT automation project. The last project would usually be from 3 monthes to 1 year ago. I only upload this project to practice GitHub and have no plan to update this framework anymore. 
 
 ## Features
