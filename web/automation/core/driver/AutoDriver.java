@@ -24,6 +24,7 @@ import web.automation.core.debug.WebDebug;
 import web.automation.core.locale.WebLocales;
 import web.automation.core.tool.WinRegistry;
 
+@SuppressWarnings("deprecation")
 public class AutoDriver{
 
 	private String browserType;
