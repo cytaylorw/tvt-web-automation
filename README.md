@@ -1,5 +1,5 @@
 # Web Automation Framework
-This framework was developed for TVT screen capturing while I was working as vendor in IBM Taiwan. I organized all the functions around one object named WebBrowser so I could quickly pick up the work that I done since last TVT automation project. I only upload this project to practice GitHub and have no plan to update this framework anymore. 
+This framework was developed for screen capturing while I was working as vendor in IBM Taiwan. I organized all the functions around one object named WebBrowser so I could quickly pick up the work that I done since last automated testing project. I only upload this project to practice GitHub and have no plan to update this framework anymore. 
 
 ## Features
 This is the first program that I wrote and used for my work. There might be some bad coding but it did help get my job done quicker than others. 
@@ -43,7 +43,7 @@ profile.setDriverPath("C:\\auto\\chromedriver.exe");
 WebBrowser browser=new WebBrowser("chrome",profile);
 ~~~
 
-External WebDriver instance can be used. This was working for my AVT project.
+External WebDriver instance can be used.
 
 ~~~java
 WebBrowser browser = new WebBrowser(webdriver,profile);
