@@ -25,7 +25,7 @@ I did not tested this framework for complete compatibility. The environment that
 
 
 ## Example
-An example file: web.automation.example.GitHub
+An example file: [web.automation.example.GitHub](https://github.com/cytaylorw/web-automation/blob/master/web/automation/example/GitHub.java)
 
 #### Video
 A demo video uploaded on [Youtube](https://youtu.be/83J638-JNVI). 
