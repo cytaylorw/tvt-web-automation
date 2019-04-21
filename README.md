@@ -1,8 +1,8 @@
 # Web Automation Framework
-This framework was developed for TVT screen capturing while I was working as vendor in IBM Taiwan. I organized all the functions around one object named WebBrowser so I could quickly pick up the work that I done since last TVT automation project. The last project would usually be from 3 monthes to 1 year ago. I only upload this project to practice GitHub and have no plan to update this framework anymore. 
+This framework was developed for screen capturing while I was working as vendor in IBM Taiwan. I organized all the functions around one object named WebBrowser so I could quickly pick up the work that I done since last automated testing project. I only upload this project to practice GitHub and have no plan to update this framework with new features. 
 
 ## Features
-This is the first program that I wrote and used for my work. I did not handle some problems well in the detail of the code but it did help to get my job done quicker than others. I could implement over 120 TVT test cases per day for an automation ready product with proper locator. The screen captures were generating stably at one image every 2 to 5 seconds.
+This is the first program that I wrote and used for my work. There might be some bad coding but it did help get my job done quicker than others. 
 
 - Single object to access all the functions.
 - A more flexible wait time that can be configured globally, locally and down to each WebElement or Action.
@@ -18,14 +18,14 @@ This is the first program that I wrote and used for my work. I did not handle so
 ## Last Working Environment/Dependencies
 I did not tested this framework for complete compatibility. The environment that I last used is provided for anyone who will be intrested.
 
-- Eclipse version: eclipse-java-mars-1-win32-x86_64
-- Eclipse plug-in: TestNG 6.9.5.201508210528
-- Java 1.8 (JDK 8u92)
-- Selenium server 2.53.0
-- Chrome Driver 2.20
+- eclipse-java-2019-03-R-win32-x86_64
+- Java 11.0.2
+- Selenium server 3.141.59
+- Chrome Driver 73.0.3683.68
 
 
 ## Example
+An example file: web.automation.example.GitHub
 
 #### Video
 A demo video uploaded on [Youtube](https://youtu.be/83J638-JNVI). 
@@ -34,19 +34,19 @@ A demo video uploaded on [Youtube](https://youtu.be/83J638-JNVI).
 This declaration launches WebDriver with built-in settings.
 
 ~~~java
-TVTProfile profile = new TVTProfile(locale);
-profile.setDebugLevel(debugLVL);
-profile.setDirectory(mainDir,locale);
-profile.setWait(waitTime,waitInterval);
-profile.setDelay(actionDelay,screenDelay);
-profile.setDriverPath(driverPath);
-browser = new WebBrowser(browserType,profile);
+AutoProfile profile = new AutoProfile("ENG");
+profile.setDebugLevel(9);
+profile.setDirectory("C:\\auto","screen");
+profile.setWait(10,100);
+profile.setDelay(0,100);
+profile.setDriverPath("C:\\auto\\chromedriver.exe");
+WebBrowser browser=new WebBrowser("chrome",profile);
 ~~~
 
-External WebDriver instance can be used. This was working for my AVT project.
+External WebDriver instance can be used.
 
 ~~~java
-browser = new WebBrowser(webdriver,tvtProfile);
+WebBrowser browser = new WebBrowser(webdriver,profile);
 ~~~
 
 
@@ -55,22 +55,24 @@ browser = new WebBrowser(webdriver,tvtProfile);
 A sample test case script.
 
 ~~~java
-browser.navigate().initURL("https://"+hostname);
 browser.window().maxBound();
-browser.waitFor().enabled(By.name("j_username")).actionsByDriver().sendKeys(username);
-browser.waitFor().enabled(By.name("j_password")).actionsByDriver().sendKeys(password);
-browser.waitFor().enabled(By.xpath("//*[@id='submitButton']/input")).actionsByDriver().click().delay(3000);
-browser.frame().defaultContent();
-browser.frame().switchTo(By.id(ID.qr_frame_rightPane));
-browser.frame().switchTo(By.id(ID.qr_frame_rightPane));
-browser.waitFor().displayed(By.xpath("//*[contains(@url,'pageId=DeviceExtensionList')]")).actionsByAction().move().delay(2000);
-browser.waitFor().displayed(By.xpath("//*[contains(@url,'pageId=DeviceExtensionList')]")).actionsByDriver().click();
-browser.window().selectNew();
+browser.navigate().initURL("https://github.com");
+browser.waitFor().displayed(BY.xpath("//header//a[contains(@href,'github.com')]"));
+browser.screen().advByRobot().saveScreen("test"+i++);
+browser.screen().advByRobot().saveScreen("test"+i++,BY.name("q"));
+browser.screen().advByDriver().saveScreen("test"+i++);
+browser.screen().advByDriver().saveScreen("test"+i++,BY.name("q"));
 browser.window().maximize();
-browser.waitFor().enabled(By.name("mi.eventviewer.toolbar.newDeviceExtensionButton")).actionsByDriver().click();
-browser.waitFor().enabled(By.id("saveButton")).actionsByDriver().click();
-browser.waitFor().displayed(By.xpath("//*[@class='errorMessage']"));
-browser.screen().advByDriver().saveScreen("08.420.010");
+browser.screen().advByRobot().saveScreen("test"+i++);
+browser.screen().advByRobot().saveScreen("test"+i++,BY.name("q"));
+browser.screen().advByDriver().saveScreen("test"+i++);
+browser.screen().advByDriver().saveScreen("test"+i++,BY.name("q"));
+browser.waitFor().enabled(BY.name("q")).actionsByDriver().sendKeys("cytaylorw").actionsByAction().sendKeys(Keys.ENTER);
+browser.waitFor().enabled(BY.xpath("//nav//a[contains(@href,'Users')]")).actionsByDriver().click();
+browser.waitFor().enabled(BY.addAsDescendant(BY.id("user_search_results"), BY.xpath("/a[contains(@href,'cytaylorw')]"))).actionsByDriver().click();
+browser.waitFor().enabled(BY.xpath("//a[contains(@href,'web-automation')]")).actionsByDriver().click();
+browser.waitFor().displayed(BY.id("readme"));
+browser.screen().advByRobot().saveScrollingScreenByPgDn("test"+i++);
 ~~~
 
 #### Next Step
