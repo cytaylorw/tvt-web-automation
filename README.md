@@ -21,14 +21,18 @@ I did not tested this framework for complete compatibility. The environment that
 - eclipse-java-2019-03-R-win32-x86_64
 - Java 11.0.2
 - Selenium server 3.141.59
-- Chrome Driver 73.0.3683.68
+- Chrome Driver 74.0.3729.6
 
+## Download
+The jar files can be download at the [sharing folder](https://drive.google.com/drive/folders/1ICVsqetloVr_uxLutqBHaBJJOTwd-40P?usp=sharing).
+- Lite version contains only the files from this repository.
+- Full version contains everything you need to run the example ***except Java JDK***.
 
 ## Example
-An example file: web.automation.example.GitHub
+An example file: [web.automation.example.GitHub](https://github.com/cytaylorw/web-automation/blob/master/web/automation/example/GitHub.java)
 
 #### Video
-A demo video uploaded on [Youtube](https://youtu.be/83J638-JNVI). 
+A demo video for the example uploaded on [Youtube](https://youtu.be/EmXDlyKnb8U). 
 
 #### Instantiation
 This declaration launches WebDriver with built-in settings.
@@ -73,6 +77,7 @@ browser.waitFor().enabled(BY.addAsDescendant(BY.id("user_search_results"), BY.xp
 browser.waitFor().enabled(BY.xpath("//a[contains(@href,'web-automation')]")).actionsByDriver().click();
 browser.waitFor().displayed(BY.id("readme"));
 browser.screen().advByRobot().saveScrollingScreenByPgDn("test"+i++);
+browser.quit();
 ~~~
 
 #### Next Step
