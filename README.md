@@ -89,4 +89,4 @@ Choice a testing framework (JUnit, TestNG, etc.) to manage test scripts. My work
 4. Actual test scripts
 
 ## License
-To be determined.
+MIT
